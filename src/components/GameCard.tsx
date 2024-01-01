@@ -12,7 +12,7 @@ export const GameCard = (props : Props) => {
 
     return (
         <>
-            <Card maxW={'sm'}>
+            <Card maxW={'sm'} width={'400px'}>
                 <Image src={getCroppedImageUrl(props.game.background_image)} borderRadius='lg'/>
                 <CardBody>
                     <Heading size='md'>{props.game.name}</Heading>
