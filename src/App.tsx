@@ -1,6 +1,7 @@
 import {Grid, GridItem, Show} from '@chakra-ui/react'
 import {NavBar} from "./components/NavBar.tsx";
 import {GamesGrid} from "./components/GamesGrid.tsx";
+import {GenreList} from "./components/GenreList.tsx";
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
             <Show above={'lg'}>
                 {/* side panel */}
                 <GridItem area={'aside'}>
-                    Side Panel
+                    <GenreList/>
                 </GridItem>
             </Show>
 
