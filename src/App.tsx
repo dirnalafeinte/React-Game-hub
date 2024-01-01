@@ -29,7 +29,7 @@ function App() {
             <Show above={'lg'}>
                 {/* side panel */}
                 <GridItem area={'aside'} paddingX={'5px'}>
-                    <GenreList handleGenre={(genre) => setSelectedGenre(genre)}/>
+                    <GenreList selectedGenre={selectedGenre} handleGenre={(genre) => setSelectedGenre(genre)}/>
                 </GridItem>
             </Show>
 
