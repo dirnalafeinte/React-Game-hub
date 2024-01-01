@@ -8,17 +8,18 @@ interface Props {
     game: Game,
 }
 
-export const GameCard = (props : Props) => {
+export const GameCard = ({game} : Props) => {
+
 
     return (
         <>
-            <Card maxW={'sm'} width={'400px'}>
-                <Image src={getCroppedImageUrl(props.game.background_image)} borderRadius='lg'/>
+            <Card maxW={'sm'}>
+                <Image src={getCroppedImageUrl(game.background_image)} borderRadius='lg'/>
                 <CardBody>
-                    <Heading size='md'>{props.game.name}</Heading>
+                    <Heading size='md'>{game.name}</Heading>
                     <HStack justifyContent={'space-between'}>
-                        <PlatformIcons platforms={props.game.parent_platforms.map(p => p.platform)}/>
-                        <MetaCritic metacritic={props.game.metacritic}/>
+                        <PlatformIcons platforms={game.parent_platforms.map(p => p.platform)}/>
+                        <MetaCritic metacritic={game.metacritic}/>
                     </HStack>
                 </CardBody>
             </Card>

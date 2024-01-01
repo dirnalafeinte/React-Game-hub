@@ -3,10 +3,14 @@ import {SimpleGrid, Text} from "@chakra-ui/react";
 import useGames from "../hooks/UseGames.ts";
 import {GameCard} from "./GameCard.tsx";
 import {GameCardSkeleton} from "./gameCardSkeleton.tsx";
+import {Genre} from "../hooks/UseGenres.ts";
 
+interface Props {
+    selectedGenre: Genre | null
+}
 
-export const GamesGrid = () => {
-    const {data, error, isLoading} = useGames()
+export const GamesGrid = ({selectedGenre} : Props) => {
+    const {data, error, isLoading} = useGames(selectedGenre)
     const skelGames = [1,2,3,4,5,6,7,8,9]
 
     return (
