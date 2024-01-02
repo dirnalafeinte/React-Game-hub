@@ -7,11 +7,16 @@ import {Genre} from "../hooks/UseGenres.ts";
 
 interface Props {
     selectedGenre: Genre | null
+    selectedPlatform: string
 }
 
-export const GamesGrid = ({selectedGenre} : Props) => {
+export const GamesGrid = ({selectedGenre, selectedPlatform} : Props) => {
     const {data, error, isLoading} = useGames(selectedGenre)
     const skelGames = [1,2,3,4,5,6,7,8,9]
+
+    const filteredGames = selectedPlatform !== ''
+        ?data.filter(game => game.parent_platforms.map(p => p.platform.slug).includes(selectedPlatform))
+        :data;
 
     return (
         <>
@@ -20,7 +25,9 @@ export const GamesGrid = ({selectedGenre} : Props) => {
                 {isLoading &&
                     skelGames.map(skel => (<GameCardSkeleton key={skel}/>))
                 }
-                {data.map((game) => (<GameCard key={game.id} game={game} />))}
+                {filteredGames.map((game) => (
+                    <GameCard key={game.id} game={game} />
+                ))}
             </SimpleGrid>
         </>
     );

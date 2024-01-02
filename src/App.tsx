@@ -4,10 +4,12 @@ import {GamesGrid} from "./components/GamesGrid.tsx";
 import {GenreList} from "./components/GenreList.tsx";
 import {useState} from "react";
 import {Genre} from "./hooks/UseGenres.ts";
+import {PlatformSelection} from "./components/PlatformSelection.tsx";
 
 
 function App() {
     const [selectedGenre, setSelectedGenre] = useState<Genre|null>(null)
+    const [selectedPlatform, setSelectedPlatform] = useState<string>('')
 
   return (
     <>
@@ -35,7 +37,8 @@ function App() {
 
             {/* Main Content Area */}
             <GridItem area={'main'}>
-                <GamesGrid selectedGenre={selectedGenre}/>
+                <PlatformSelection handleSelection={(platform) => setSelectedPlatform(platform)}/>
+                <GamesGrid selectedPlatform={selectedPlatform} selectedGenre={selectedGenre}/>
             </GridItem>
         </Grid>
     </>

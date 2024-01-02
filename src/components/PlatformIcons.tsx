@@ -13,7 +13,7 @@ import { Platform } from "../hooks/UseGames.ts"
 import {HStack, Icon} from "@chakra-ui/react";
 import {IconType} from "react-icons";
 
-interface Props {
+export interface Props {
     platforms : Platform[]
 }
 
@@ -31,7 +31,7 @@ export const PlatformIcons = ({platforms} : Props) => {
     }
     return (
         <HStack marginY={2}>
-            {platforms.map(platform => <Icon as={icons[platform.slug]} color={'grey'} />)}
+            {platforms.map(platform => <Icon key={platform.id} as={icons[platform.slug]} color={'grey'} />)}
         </HStack>
     );
 };

@@ -10,7 +10,6 @@ interface Props {
 
 export const GameCard = ({game} : Props) => {
 
-
     return (
         <>
             <Card maxW={'sm'}>
