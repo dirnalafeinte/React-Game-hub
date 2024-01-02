@@ -9,7 +9,7 @@ export const ThemeColorSwitch = () => {
         <>
             <HStack>
                 <Switch isChecked={colorMode === 'dark'} id='Dark mode' colorScheme={'green'} onChange={toggleColorMode}></Switch>
-                <Text>Dark Mode</Text>
+                <Text whiteSpace={'nowrap'}>Dark Mode</Text>
             </HStack>
         </>
     );

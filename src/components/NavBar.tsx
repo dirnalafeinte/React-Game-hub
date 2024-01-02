@@ -1,12 +1,14 @@
 import {HStack} from "@chakra-ui/react";
-import logo from '../assets/logo.webp'
+import newLogo from '../assets/newLogo.webp'
 import {ThemeColorSwitch} from "./ThemeColorSwitch.tsx";
+import {SearchBar} from "./SearchBar.tsx";
 
 export function NavBar() {
     return (
         <>
-            <HStack justifyContent={'space-between'} padding={'10px'}>
-                <img src={logo} alt="Logo" width="60px"/>
+            <HStack justifyContent={'space-evenly'} padding={'10px'}>
+                <img src={newLogo} alt="Logo" width="60px" style={{ borderRadius: '40%' }}/>
+                <SearchBar/>
                 <ThemeColorSwitch/>
             </HStack>
         </>
