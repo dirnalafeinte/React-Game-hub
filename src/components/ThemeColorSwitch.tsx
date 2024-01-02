@@ -2,7 +2,7 @@ import {HStack, Switch, Text, useColorMode} from '@chakra-ui/react'
 
 
 export const ThemeColorSwitch = () => {
-    // Here's the signature
+
     const { toggleColorMode, colorMode } = useColorMode()
 
     return (
