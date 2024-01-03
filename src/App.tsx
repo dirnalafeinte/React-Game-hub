@@ -1,15 +1,19 @@
-import {Grid, GridItem, Show} from '@chakra-ui/react'
+import {Grid, GridItem, HStack, Show} from '@chakra-ui/react'
 import {NavBar} from "./components/NavBar.tsx";
 import {GamesGrid} from "./components/GamesGrid.tsx";
 import {GenreList} from "./components/GenreList.tsx";
 import {useState} from "react";
 import {Genre} from "./hooks/UseGenres.ts";
 import {PlatformSelection} from "./components/PlatformSelection.tsx";
+import {Platform} from "./hooks/UsePlatform.ts";
+import {SortSelection} from "./components/SortSelection.tsx";
+
 
 
 function App() {
     const [selectedGenre, setSelectedGenre] = useState<Genre|null>(null)
-    const [selectedPlatform, setSelectedPlatform] = useState<string>('')
+    const [selectedPlatform, setSelectedPlatform] = useState<Platform|null>(null)
+    const [selectedOrder, setSelectedOrder] = useState<string>('')
 
   return (
     <>
@@ -37,8 +41,11 @@ function App() {
 
             {/* Main Content Area */}
             <GridItem area={'main'}>
-                <PlatformSelection handleSelection={(platform) => setSelectedPlatform(platform)}/>
-                <GamesGrid selectedPlatform={selectedPlatform} selectedGenre={selectedGenre}/>
+                <HStack paddingLeft={4} marginBottom={5}>
+                    <PlatformSelection selectedPlatform={selectedPlatform} handleSelection={(platform) => setSelectedPlatform(platform)}/>
+                    <SortSelection selectedSort={selectedOrder} handleSelection={(order) => setSelectedOrder(order)}/>
+                </HStack>
+                <GamesGrid selectedOrder={selectedOrder} selectedPlatform={selectedPlatform} selectedGenre={selectedGenre}/>
             </GridItem>
         </Grid>
     </>

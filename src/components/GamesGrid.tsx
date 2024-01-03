@@ -1,22 +1,21 @@
 
 import {SimpleGrid, Text} from "@chakra-ui/react";
-import useGames from "../hooks/UseGames.ts";
 import {GameCard} from "./GameCard.tsx";
 import {GameCardSkeleton} from "./gameCardSkeleton.tsx";
 import {Genre} from "../hooks/UseGenres.ts";
+import {Platform} from "../hooks/UsePlatform.ts";
+import useGames from "../hooks/UseGames.ts";
 
 interface Props {
     selectedGenre: Genre | null
-    selectedPlatform: string
+    selectedPlatform: Platform | null
+    selectedOrder: string
 }
 
-export const GamesGrid = ({selectedGenre, selectedPlatform} : Props) => {
-    const {data, error, isLoading} = useGames(selectedGenre)
+export const GamesGrid = ({selectedGenre, selectedPlatform, selectedOrder} : Props) => {
+    const {data, error, isLoading} = useGames(selectedGenre, selectedPlatform, selectedOrder)
     const skelGames = [1,2,3,4,5,6,7,8,9]
 
-    const filteredGames = selectedPlatform !== ''
-        ?data.filter(game => game.parent_platforms.map(p => p.platform.slug).includes(selectedPlatform))
-        :data;
 
     return (
         <>
@@ -25,7 +24,7 @@ export const GamesGrid = ({selectedGenre, selectedPlatform} : Props) => {
                 {isLoading &&
                     skelGames.map(skel => (<GameCardSkeleton key={skel}/>))
                 }
-                {filteredGames.map((game) => (
+                {data.map((game) => (
                     <GameCard key={game.id} game={game} />
                 ))}
             </SimpleGrid>

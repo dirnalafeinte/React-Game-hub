@@ -7,7 +7,7 @@ interface FetchingRes<T> {
     results: T[]
 }
 
-const useData = <T>(endpoint : string, requestconfig? : AxiosRequestConfig, deps?: any[]) => {
+const useData = <T>(endpoint : string, requestconfig? : AxiosRequestConfig, deps?: unknown[]) => {
     const [data, setData] = useState<T[]>([])
     const [error, setError] = useState([])
     const [isLoading, setIsLoading] = useState(false)
@@ -30,7 +30,7 @@ const useData = <T>(endpoint : string, requestconfig? : AxiosRequestConfig, deps
         return () => controller.abort()
     }, deps ? [...deps] : [])
 
-    return {data, error, isLoading, setData}
+    return {data, error, isLoading}
 }
 
 export default useData
