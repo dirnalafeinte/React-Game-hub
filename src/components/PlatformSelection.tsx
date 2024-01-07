@@ -8,9 +8,7 @@ interface Props {
 }
 
 export const PlatformSelection = ({ handleSelection, selectedPlatform }: Props) => {
-
     const {data} = usePlatforms()
-
 
     return (
         <>

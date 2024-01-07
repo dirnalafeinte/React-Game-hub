@@ -26,7 +26,7 @@ export const SortSelection = ({handleSelection, selectedSort} : Props) => {
                     Order By : {currentSortOrder ? currentSortOrder.label : 'Relevance'}
                 </MenuButton>
                 <MenuList>
-                    {sortOrder.map(order => <MenuItem onClick={() => handleSelection(order.value)} value={order.value}>{order.label}</MenuItem>)}
+                    {sortOrder.map(order => <MenuItem key={order.value} onClick={() => handleSelection(order.value)} value={order.value}>{order.label}</MenuItem>)}
                 </MenuList>
             </Menu>
         </>
