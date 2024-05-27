@@ -1,16 +1,16 @@
-# React + TypeScript + Vite
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
 </head>
-public/Screenshot (1).png
+
 <body>
     <h1>GameHub React Project</h1>
 
 <p>GameHub is a web application built with React, TypeScript, vite and chakra-ui that allows users to discover and explore video games using the RAWG API.</p>
-<img src="https://github.com/dirnalafeinte/React-Game-hub.git/main/public/Screenshot (1).png>
+<p>GameHub is currently under active development.</p>
+<img src="https://github.com/dirnalafeinte/React-Game-Hub/blob/main/public/Screenshot%20(1).png">
+
 
 <h2>Technologies Used</h2>
   <ul>
@@ -20,6 +20,18 @@ public/Screenshot (1).png
     <li>Vite: A fast and minimalist build tool for modern web development.</li>
     <li>Chakra UI: A modular and accessible component library for building React applications.</li>
   </ul>
+    
+
+<h2>Installation</h2>
+  <p>To install this project, you need to have Node.js installed on your system. Then, follow these steps:</p>
+  <ul>
+    <li>Clone the repository using <code>git clone https://github.com/melodiw82/React-Game-Hub.git</code>.</li>
+    <li>Change into the project directory using <code>cd React-Game-Hub</code>.</li>
+    <li>Install the dependencies using <code>npm install</code>.</li>
+    <li>Start the development server using <code>npm run dev</code>.</li>
+    <li>Open the link.</li>
+  </ul>
+  <b>API requires vpn if you're Iranian, otherwise it would throw 'Network error'</b>
 
 
   <h2> Features</h2>
