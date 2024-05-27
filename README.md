@@ -5,12 +5,12 @@
 <head>
   <meta charset="UTF-8">
 </head>
-
+public/Screenshot (1).png
 <body>
     <h1>GameHub React Project</h1>
 
 <p>GameHub is a web application built with React, TypeScript, vite and chakra-ui that allows users to discover and explore video games using the RAWG API.</p>
-<img src="https://github.com/melodiw82/React-Game-Hub/blob/main/public/Screenshot%20(1).png">
+<img src="https://github.com/dirnalafeinte/React-Game-hub.git/Screenshot%20(1).png">
 
 
 <h2>Technologies Used</h2>
